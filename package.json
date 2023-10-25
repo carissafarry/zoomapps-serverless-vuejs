@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
-    "dev": "concurrently -c inverse.yellow,inverse.green 'npm:firebase' 'npm:vue'",
-    "firebase": "firebase emulators:start --only hosting,functions,firestore",
+    "dev": "concurrently -c inverse.yellow,inverse.green 'npm:vue'",
     "vue": "vite",
     "deploy": "npm run build && firebase deploy",
     "preview": "vite preview"
@@ -25,8 +24,10 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@vitejs/plugin-vue": "^3.1.0",
     "prettier": "^2.7.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "vite": "^3.1.0",
     "vite-plugin-vuetify": "^1.0.0-alpha.12",
     "vue-cli-plugin-vuetify": "~2.5.8"

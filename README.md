@@ -232,3 +232,7 @@ At this time there are no e2e or unit tests.
 If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or
 our [Developer Forum](https://devforum.zoom.us). Priority support is also available
 with [Premier Developer Support](https://zoom.us/docs/en-us/developer-support-plans.html) plans.
+
+
+## Customization
+This repository system has been customized by not using Firebase, and adding server code from [zoom-app-sample-js](https://github.com/zoom/zoomapps-sample-js)
