@@ -7,14 +7,13 @@
     "build": "vite build",
     "dev": "concurrently -c inverse.yellow,inverse.green 'npm:vue'",
     "vue": "vite",
-    "deploy": "npm run build && firebase deploy",
+    "deploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
     "@zoom/appssdk": "^0.16.5",
     "concurrently": "^7.4.0",
-    "firebase": "^9.10.0",
     "firebase-functions": "^4.0.1",
     "pinia": "^2.0.23",
     "roboto-fontface": "*",
