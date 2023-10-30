@@ -43,7 +43,7 @@ export const zoomApp = {
 
 // Zoom App Info
 export const appName = config.APP_NAME || 'zoom-app';
-export const redirectUri = zoomApp.redirectUrl;
+export const redirectUri = config.ZM_REDIRECT_URL;
 
 // HTTP
 export const port = config.PORT || '5173';

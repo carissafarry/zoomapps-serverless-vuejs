@@ -38,17 +38,9 @@ const validateQuery = [
         .withMessage(`code must be > ${codeMin} and < ${codeMax} chars`)
         .escape(),
     query('state')
-        // .isString()
-        // .withMessage('state must be a string')
-        // .custom((value, { req }) => value === req.session.state)
-        .custom((value, { req }) => {
-            // Check if the state is in base64 encoding format
-            if (value.startsWith('base64:')) {
-                return isBase64Encoded(value.substring(7), { req });
-            } else {
-                return value === req.session.state;
-            }
-        })
+        .isString()
+        .withMessage('state must be a string')
+        .custom((value, { req }) => value === req.session.state)
         .withMessage('invalid state parameter')
         .escape(),
 ];

@@ -64,6 +64,7 @@ function apiRequest(method, endpoint, token, data = null) {
         },
     }).then(({ data }) => Promise.resolve(data));
 }
+const config = process.env;
 
 /**
  * Return the url, state and verifier for the Zoom App Install
@@ -85,7 +86,7 @@ export function getInstallURL() {
 
     url.searchParams.set('response_type', 'code');
     url.searchParams.set('client_id', zoomApp.clientId);
-    url.searchParams.set('redirect_uri', zoomApp.redirectUrl);
+    url.searchParams.set('redirect_uri', config.ZM_REDIRECT_URL);
     url.searchParams.set('code_challenge', challenge);
     url.searchParams.set('code_challenge_method', 'S256');
     url.searchParams.set('state', state);

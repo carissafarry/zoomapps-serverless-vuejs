@@ -36,17 +36,17 @@ export default defineConfig({
     plugins: [
         vue(),
         vuetify({ autoImport: true }),
-        // {
-        //     name: 'configure-response-headers',
-        //     configureServer: server => {
-        //         server.middlewares.use((_req, res, next) => {
-        //             res.setHeader('Strict-Transport-Security', 'max-age=31536000');
-        //             res.setHeader('X-Content-Type-Options', 'nosniff');
-        //             // res.setHeader('Content-Security-Policy', csp);
-        //             res.setHeader('Referrer-Policy', 'same-origin');
-        //             next();
-        //         });
-        //     }
-        // }
+        {
+            name: 'configure-response-headers',
+            configureServer: server => {
+                server.middlewares.use((_req, res, next) => {
+                    res.setHeader('Strict-Transport-Security', 'max-age=31536000');
+                    res.setHeader('X-Content-Type-Options', 'nosniff');
+                    // res.setHeader('Content-Security-Policy', csp);
+                    res.setHeader('Referrer-Policy', 'same-origin');
+                    next();
+                });
+            }
+        }
     ],
 });
