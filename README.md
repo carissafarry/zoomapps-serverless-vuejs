@@ -236,3 +236,8 @@ with [Premier Developer Support](https://zoom.us/docs/en-us/developer-support-pl
 
 ## Customization
 This repository system has been customized by not using Firebase, and adding server code from [zoom-app-sample-js](https://github.com/zoom/zoomapps-sample-js)
+
+To start the project with the server:
+```shell
+npm run start
+```
