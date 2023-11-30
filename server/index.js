@@ -23,16 +23,17 @@ const dbg = debug(`${appName}:app`);
 const redirectHost = new URL(redirectUri).host;
 
 // views and assets
-// const staticDir = `${__dirname}/dist`;
-// const viewDir = `${__dirname}/views`;
-//
-// app.set('view engine', 'pug');
-// app.set('views', viewDir);
-// app.locals.basedir = staticDir;
+const staticDir = `${__dirname}/dist`;
+const viewDir = `${__dirname}/views`;
+
+app.set('view engine', 'pug');
+app.set('views', viewDir);
+app.locals.basedir = staticDir;
 
 // HTTP
 app.set('port', port);
 app.set('trust proxy', true);
+
 // log Axios requests and responses
 const logFunc = (r) => {
     if (process.env.NODE_ENV !== 'production') {
@@ -86,7 +87,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev', { stream: { write: (msg) => dbg(msg) } }));
 
 // serve our app folder
-// app.use(express.static(staticDir));
+app.use(express.static(staticDir));
 
 /* Routing */
 app.use('/api/', indexRoutes);
@@ -104,8 +105,8 @@ app.use((err, req, res, next) => {
     if (res.locals.error) dbg(`${title} %s`, err.stack);
 
     // render the error page
-    // res.status(status);
-    // res.render('error');
+    res.status(status);
+    res.render('error');
 });
 
 // redirect users to the home page if they get a 404 route
