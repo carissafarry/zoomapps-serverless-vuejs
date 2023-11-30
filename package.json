@@ -6,7 +6,7 @@
     "serve": "vite preview",
     "build": "vite build",
     "dev": "concurrently -c inverse.yellow,inverse.green 'npm:vue'",
-    "start": "concurrently \"npm run dev\" \"cd src/server && npm run serve:server\"",
+    "start": "concurrently \"npm run dev\" \"cd server && npm run serve:server\"",
     "vue": "vite",
     "deploy": "npm run build",
     "preview": "vite preview"

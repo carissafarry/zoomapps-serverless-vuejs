@@ -1,8 +1,5 @@
 .secret.local
 .env
-.env.*
-
-!.env.sample
 
 firebase.config.js
 
